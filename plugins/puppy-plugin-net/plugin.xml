@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:rim="http://www.blackberry.com/ns/widgets"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="puppy-plugin-net"
+        version="1.0.0">
+    <name>Net</name>
+    <description>Puppy Net Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>puppy,net</keywords>
+    <js-module src="www/puppy_net.js" name="puppynet">
+        <clobbers target="puppyNet" />
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PuppyNet" >
+                <param name="android-package" value="puppy.plugin.net.PuppyNet"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/PuppyNet.java" target-dir="src/puppy/plugin/puppyNet" />
+    </platform>
+</plugin>
